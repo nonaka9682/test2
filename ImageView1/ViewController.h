@@ -10,6 +10,10 @@
 
 @interface ViewController : UIViewController
 <UINavigationControllerDelegate,UIImagePickerControllerDelegate> {
+    IBOutlet UIImageView *test;
+    __weak IBOutlet UIImageView *image1;
+    IBOutlet UIImageView *imageView;
+    __weak IBOutlet UIImageView *image2;
 }
 
 @property (weak, nonatomic) IBOutlet UIImageView *test;

@@ -56,11 +56,42 @@
     [self.test setImage:imagen];//testに表示
     
     [self dismissViewControllerAnimated:YES completion:NULL];
+    
+}
 
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    CGPoint touchPos = [touch locationInView:self.view];
+    image1.center = touchPos;
+    
+    
+}
+
+
+/*
+[[UIApplication sharedApplication] endIgnoringInteractionEvents];
+
+if([[UIApplication sharedApplication] isIgnoringInteractionEvents])
+{
+    NSLog("Touch Abailable");
+} else {
+    NSLog("Touch Unavailable");
 }
 
 
 
+imagen.userInteravtionEnabled = YES;
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if([event touchesForView:imagen] != NULL)
+    {
+    
+    }
+}
+
+*/
 
 
 - (void)didReceiveMemoryWarning
