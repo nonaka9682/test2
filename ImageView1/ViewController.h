@@ -9,5 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+<UINavigationControllerDelegate,UIImagePickerControllerDelegate> {
+}
 
+@property (weak, nonatomic) IBOutlet UIImageView *test;
+
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
+- (IBAction)pressLoadImageBtn:(id)sender;
 @end

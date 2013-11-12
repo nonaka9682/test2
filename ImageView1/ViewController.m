@@ -18,7 +18,50 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+
+    
 }
+
+
+- (IBAction)pressLoadImageBtn:(id)sender {
+    NSLog(@"ボタンを押した！");
+    // インタフェース使用可能なら
+    if ( [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary] ) {
+        // UIImageControllerの初期化
+        UIImagePickerController *ipc = [[UIImagePickerController alloc] init];
+        /* UIImageControllerで取得できるデータは以下の3つ
+         * SourceTypeCamera                : カメラを起動する
+         * SourceTypePhotoLibrary        : フォトライブラリーを開く
+         * SourceTypeSavedPhotosAlbum    : （カメラがあるiPhoneは）カメラロールから選択する
+         */
+        [ipc setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+        // Delegateセット
+        [ipc setDelegate:self];
+        // NOを設定するとイメージを取得できない
+        [ipc setAllowsEditing:YES];
+        // 指定したViewを一番上に表示する
+        [self presentViewController:ipc  animated:YES completion: nil];
+    }
+}
+
+//イメージ取得後に呼び出される関数
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    // 選択したイメージをimageにセットする
+    UIImage *imagen = [info objectForKey:UIImagePickerControllerEditedImage];
+
+
+    // imageをImageViewerにセットする
+    [self.imageView setImage:imagen];//imageviewに表示
+    [self.test setImage:imagen];//testに表示
+    
+    [self dismissViewControllerAnimated:YES completion:NULL];
+
+}
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {
