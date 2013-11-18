@@ -17,9 +17,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view, typically from a nib.
     
-
+    
     
 }
 
@@ -49,8 +49,8 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     // 選択したイメージをimageにセットする
     UIImage *imagen = [info objectForKey:UIImagePickerControllerEditedImage];
-
-
+    
+    
     // imageをImageViewerにセットする
     [self.imageView setImage:imagen];//imageviewに表示
     [self.test setImage:imagen];//testに表示
@@ -64,34 +64,34 @@
     UITouch *touch = [touches anyObject];
     CGPoint touchPos = [touch locationInView:self.view];
     image1.center = touchPos;
-    
+    //image2.center = touchPos;
     
 }
 
 
 /*
-[[UIApplication sharedApplication] endIgnoringInteractionEvents];
-
-if([[UIApplication sharedApplication] isIgnoringInteractionEvents])
-{
-    NSLog("Touch Abailable");
-} else {
-    NSLog("Touch Unavailable");
-}
-
-
-
-imagen.userInteravtionEnabled = YES;
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    if([event touchesForView:imagen] != NULL)
-    {
-    
-    }
-}
-
-*/
+ [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+ 
+ if([[UIApplication sharedApplication] isIgnoringInteractionEvents])
+ {
+ NSLog("Touch Abailable");
+ } else {
+ NSLog("Touch Unavailable");
+ }
+ 
+ 
+ 
+ imagen.userInteravtionEnabled = YES;
+ 
+ -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+ {
+ if([event touchesForView:imagen] != NULL)
+ {
+ 
+ }
+ }
+ 
+ */
 
 
 - (void)didReceiveMemoryWarning

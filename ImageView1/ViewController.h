@@ -17,8 +17,6 @@
 }
 
 @property (weak, nonatomic) IBOutlet UIImageView *test;
-
-
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 - (IBAction)pressLoadImageBtn:(id)sender;
